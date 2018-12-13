@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>用户借书</h1>
+    <form action="/borrowBook/" method="POST">
+        {% csrf_token %}
+        <div name="readid">
+            读者编号：{{form.readerid}}
+        </div>
+        <div name="ISBN">
+图书ISBN：{{form.isbn}}
+        </div>
+        <div name="borrowdate">
+借阅日期:{{form.borrowdate}}
+        </div>
+        <div name="returndate">
+归还日期：{{form.returndate}}
+        </div>
+        <input type="submit" value="借书">
+
+
+    </form>
+</body>
+</html>

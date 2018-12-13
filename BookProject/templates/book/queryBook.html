@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/queryBook/" method="POST">
+        {% csrf_token %}
+        <input type="text"name="book" placeholder="请输入书名">
+        <input type="submit" value="查找">
+        {% if message %}<p><font color="red">*{{message}}</font></p>{% endif %}
+
+        <table width="60%" border="1" cellspacing="0" cellpadding="0" >
+            <tr>
+                <td>国际标准书号(ISBN)</td>
+                <td>{{ISBN|default:"None"}}</td>    
+            </tr>
+            <tr>
+                <td>书名</td>
+                <td>{{bookname|default:"None"}}</td>
+            </tr>
+            <tr>
+                <td>作者</td>
+                <td>{{author|default:"None"}}</td>
+            </tr>
+            <tr>
+                <td>出版社</td>
+                <td>{{publish|default:"None"}}</td>
+            </tr>
+            <tr>
+                <td>出版时间</td>
+                <td>{{publishDate|default:"None"}}</td>
+            </tr>
+            <tr>
+                <td>印刷次数</td>
+                <td>{{publishTime|default:"None"}}</td>
+            </tr>
+            <tr>
+                <td>单价</td>
+                <td>{{unitprice|default:"None"}}</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
