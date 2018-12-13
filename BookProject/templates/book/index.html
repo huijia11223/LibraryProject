@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>主页面,欢迎：{{username}}</h1>
+    <div>
+        <a href="/queryBook/">查找</a>
+        <a href="/borrowBook/">借书</a>
+        <a href="/returnBook/">还书</a>
+        <a href="/addBook/">图书入库</a>
+        <a href="/readerlist/">借书证管理</a>
+    </div>
+    <div>   
+        
+        <ul>
+            <li>书名——作者——单价</li>
+            {% for book in books %}
+            <li>
+                {{book.bookname}}——{{book.author}}——{{book.unitprice}}
+            </li>
+            {% endfor %}
+            
+        </ul>
+        
+    </div>
+</body>
+</html>
